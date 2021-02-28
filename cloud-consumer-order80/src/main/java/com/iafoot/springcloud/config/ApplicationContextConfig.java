@@ -1,0 +1,34 @@
+package com.iafoot.springcloud.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @author ：iAfoot
+ * @description：TODO
+ * @date ：2021/2/28 16:12
+ */
+@Configuration
+public class ApplicationContextConfig {
+    @Bean
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

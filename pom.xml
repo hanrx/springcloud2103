@@ -12,6 +12,7 @@
 
   <modules>
     <module>cloud-provider-payment8001</module>
+    <module>cloud-consumer-order80</module>
   </modules>
 
   <!--统一管理jar包版本-->
@@ -70,6 +71,7 @@
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
+        <version>${lombok.version}}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

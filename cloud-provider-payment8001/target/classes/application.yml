@@ -12,13 +12,13 @@ spring:
     username: springcloud2103
     password: springcloud2103
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.iafoot.springcloud.entities       #所有Entity别名类所在
-
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.iafoot.springcloud.entities       #所有Entity别名类所在

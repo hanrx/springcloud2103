@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: nacos-order-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.0.250.106:8848 #配置Nacos 的IP地址
+
+# 消费者将要去访问微服务名称（注册成功进nacos的服务提供者）
+service-url:
+  nacos-user-service: http://nacos-payment-provider

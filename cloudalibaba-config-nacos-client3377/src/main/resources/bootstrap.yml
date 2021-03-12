@@ -7,10 +7,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.0.250.106:8848 #配置Nacos 服务注册中心的IP地址
+        server-addr: 192.168.20.19:8848 #配置Nacos 服务注册中心的IP地址
       config:
-        server-addr: 10.0.250.106:8848 # Nacos作为配置中心地址
+        server-addr: 192.168.20.19:8848 # Nacos作为配置中心地址
         file-extension: yaml # 指定yaml格式的配置
+        namespace: cfecf6c2-1caa-4915-a196-664ac752a158
+        group: TEST
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # nacos-config-client.dev.yaml

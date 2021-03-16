@@ -4,11 +4,9 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.iafoot.springcloud.entities.CommonResult;
 import com.iafoot.springcloud.entities.Payment;
+import com.iafoot.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -26,6 +24,9 @@ public class CircleBreakerController {
 
     @Resource
     private RestTemplate restTemplate;
+    //-------------OpenFeign
+    @Resource
+    private PaymentService paymentService;
 
     @RequestMapping("/cusumer/fallback/{id}")
 //    @SentinelResource(value = "fallback")//没有配置
@@ -55,7 +56,11 @@ public class CircleBreakerController {
     }
 
 
-
+    //-------------OpenFeign
+    @GetMapping(value = "/consumer/paymentSQL/{id}")
+    public CommonResult<Payment> getServerPort(@PathVariable("id") Long id){
+        return paymentService.getServerPort(id);
+    }
 
 
 
